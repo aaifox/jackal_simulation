@@ -1,0 +1,22 @@
+<launch>
+  <!-- RS16 LiDAR has 360 / 0.09 = 4000 beams at 5Hz. Gmapping's scanmatcher can only use max 2048 beams, so 360 / 2048 = 0.175deg = 0.0031rad usable step -->
+  <!-- RS16 LiDAR has 360 / 0.17857 = 2016 beams at 10Hz. So 0.0031166rad -->
+
+  <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan" output="screen">
+      <remap from="cloud_in" to="/rslidar_points"/>
+      <rosparam>
+          target_frame: base_link
+          tolerance: 1.0
+          min_height: 0.25
+          max_height: 0.75
+          angle_min: -3.14
+          angle_max: 3.14
+          angle_increment: 0.0031166
+          scan_time: 0.1
+          range_min: 0.3
+          range_max: 100.0
+          use_inf: true
+          concurrency_level: 1
+      </rosparam>
+  </node>
+</launch>

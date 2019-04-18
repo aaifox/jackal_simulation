@@ -1,0 +1,7 @@
+<launch>
+  <include file="$(find jackal_bringup)/launch/rviz.launch" />
+
+  <include file="$(find gmapping_jackal)/launch/amcl.launch" />
+
+  <include file="$(find move_base_jackal)/launch/move_base.launch" />
+</launch>

@@ -1,0 +1,34 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="cmd_vel_topic" default="/cmd_vel" />
+  <arg name="odom_topic" default="/odometry/filtered" />
+
+  <!-- move_base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    
+    <!--param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS" /-->
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS"/>
+
+    <!-- specify the global planner name -->
+    <!-- options : base_global_planner/NavfnROS, global_planner/GlobalPlanner, SBPLLatticePlanner -->
+    <param name="base_global_planner" value="navfn/NavfnROS" />
+
+    <rosparam file="$(find move_base_jackal)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find move_base_jackal)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find move_base_jackal)/param/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find move_base_jackal)/param/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find move_base_jackal)/param/move_base_params.yaml" command="load" />
+    <rosparam file="$(find move_base_jackal)/param/dwa_local_planner_params.yaml" command="load" />
+<!--    <rosparam file="$(find move_base_jackal)/param/base_local_planner_params.yaml" command="load" /> -->
+    <rosparam file="$(find move_base_jackal)/param/base_global_planner_params.yaml" command="load" />
+
+    <!-- Load the SBPL related stuff too in case if we decide to use it -->
+    <param name="SBPLLatticePlanner/primitive_filename" value="$(find move_base_jackal)/resources/mprim/jackal_5cm_5prims_noinplacerot.mprim"/>
+    <rosparam file="$(find move_base_jackal)/param/sbpl_lattice_planner_params.yaml" command="load" />
+    
+    <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
+    <remap from="odom" to="$(arg odom_topic)"/>
+    
+    
+  </node>
+</launch>

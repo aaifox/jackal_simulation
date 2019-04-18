@@ -1,0 +1,58 @@
+<launch>
+  <arg name="3d" default="false"/>  <!-- 2D vs 3D map -->
+  <arg name="slam" default="true"/> <!-- SLAM vs pure localization -->
+  <arg name="online" default="false"/> <!-- online (real-time) vs offline solving -->
+  <arg name="use_bag" default="false"/> <!-- recorded vs live data -->
+  <arg name="bag_filenames"/>
+  <arg name="load_state_filename"/>
+
+  <arg name="default_config_dim" value="2d" unless="$(arg 3d)" />
+  <arg name="default_config_dim" value="3d" if="$(arg 3d)" /> 
+  <arg name="config_dim" default="$(arg default_config_dim)"/>
+
+  <param name="/use_sim_time" value="true" />
+  <group if="$(arg use_bag)">
+    <!-- <param name="/use_sim_time" value="true" /> -->
+    <node name="playbag" pkg="rosbag" type="play" args="--clock --pause $(arg bag_filenames)" />
+  </group>
+
+  <param name="robot_description" command="$(find xacro)/xacro $(find jackal_description)/urdf/jackal.urdf.xacro" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <remap from="points2" to="/rslidar_points" />
+  <remap from="imu" to="/imu_um7/data" />
+  <remap from="odom" to="/odometry/filtered" />
+  <remap from="fix" to="/navsat/fix" />
+
+  <group if="$(arg online)"> 
+    <group if="$(arg slam)"> 
+      <!-- SLAM - can use bag or live data -->
+      <node name="cartographer_node" pkg="cartographer_ros" type="cartographer_node" required="true" output="screen" args="
+        -configuration_directory $(find cartographer_jackal)/config
+        -configuration_basename jackal_$(arg config_dim)_slam.lua" />
+    </group>
+    <group unless="$(arg slam)"> 
+      <!-- Localization - can use bag or live data -->
+      <node name="cartographer_node" pkg="cartographer_ros" type="cartographer_node" required="true" output="screen" args="
+        -configuration_directory $(find cartographer_jackal)/config
+        -configuration_basename jackal_$(arg config_dim)_localization.lua
+        -load_state_filename $(arg load_state_filename)" />
+      <node name="cartographer_relocalize" pkg="cartographer_jackal" type="cartographer_relocalize.py" required="true" output="screen" >
+        <param name="configuration_directory" value="$(find cartographer_jackal)/config"/>
+        <param name="configuration_basename" value="jackal_$(arg config_dim)_localization.lua"/>
+      </node>
+    </group>
+  </group>
+  <group unless="$(arg online)">
+    <!-- SLAM - can only use bag data -->
+    <node name="cartographer_offline_node" pkg="cartographer_ros" type="cartographer_offline_node" required="true" output="screen" args="
+      -configuration_directory $(find cartographer_jackal)/config
+      -configuration_basenames jackal_$(arg config_dim)_slam.lua
+      -urdf_filenames $(find jackal_description)/urdf/jackal.urdf
+      -bag_filenames $(arg bag_filenames)" />
+  </group>
+
+  <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros" type="cartographer_occupancy_grid_node" args="-resolution 0.05" />
+
+  <node name="rviz" pkg="rviz" type="rviz" required="false" args="-d $(find cartographer_jackal)/rviz/jackal.rviz" /> 
+</launch>

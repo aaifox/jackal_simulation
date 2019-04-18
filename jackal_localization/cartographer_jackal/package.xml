@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>cartographer_jackal</name>
+  <version>1.0.0</version>
+  <description>Cartographer for Jackal</description>
+  <maintainer email="dimitrios.panagiotis.geromichalos@continental-corporation.com">uib12812</maintainer>
+  <license>Copyright 2018 Corp S&amp;T AIR
+      Licensed under the ContiSource License, Version 1.0. You may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+      http://github.conti.de/pages/ContiSource/ContiForge/docs/documents/CSLicense
+
+      Software distributed under the License is distributed on AS IS BASIS and WITHOUT WARRANTY, either expressed or implied.
+  </license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>cartographer_ros</depend>
+  <depend>jackal_description</depend>
+  <depend>xacro</depend>
+</package>

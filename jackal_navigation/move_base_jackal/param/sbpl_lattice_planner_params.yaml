@@ -1,0 +1,9 @@
+SBPLLatticePlanner:
+  planner_type: 'ARAPlanner'
+  allocated_time: 5 # default: 10.0
+  initial_epsilon: 3.0 #(for 0.05 resolution) # 3.0 #(for 0.1 resolution) 
+  environment_type: 'XYThetaLattice' # The only environment supported
+  forward_search: false # default is false
+  nominalvel_mpersecs: 0.4
+  timetoturn45degsinplace_secs: 2
+  lethal_obstacle: 254

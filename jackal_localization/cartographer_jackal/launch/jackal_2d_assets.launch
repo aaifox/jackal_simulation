@@ -1,0 +1,8 @@
+<launch>
+  <node name="cartographer_assets_writer" pkg="cartographer_ros" type="cartographer_assets_writer" required="true" output="screen" args="
+          -configuration_directory $(find cartographer_jackal)/config
+          -configuration_basename jackal_2d_assets.lua
+          -urdf_filename $(find jackal_description)/urdf/jackal.urdf
+          -bag_filenames $(arg bag_filenames)
+          -pose_graph_filename $(arg pose_graph_filename)" />
+</launch>
