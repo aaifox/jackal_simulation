@@ -8,9 +8,11 @@ options = {
   -- TF frames
   map_frame = "map",  -- parent frame of published poses
   published_frame = "odom",  -- child frame of published poses
-  tracking_frame = "um7_imu_link",  -- need IMU frame if using IMU
+ -- tracking_frame = "um7_imu_link",  -- need IMU frame if using IMU
+  tracking_frame = "imu_link",  -- need IMU frame if using IMU
   odom_frame = "odom",  -- not used if provide_odom_frame is false
   provide_odom_frame = false,
+--  provide_odom_frame = true,
   publish_frame_projected_to_2d = false,  -- assume flat terrain
   -- use_pose_extrapolator = true,  -- not supported in 1.0
 

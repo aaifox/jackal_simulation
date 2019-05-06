@@ -3,8 +3,9 @@
   <arg name="use_sim_time" default="true" />
   <arg name="gui" default="true" />
   <arg name="headless" default="false" />
-    <arg name="world_name" default="$(find jackal_gazebo)/world/cylinders6.world" /> 
+    <arg name="world_name" default="$(find jackal_gazebo)/world/delivery_1.world" /> 
 <!--  <arg name="world_name" default="$(find jackal_gazebo)/world/creech_map.world" /> -->
+<!--  <arg name="world_name" default="$(find jackal_gazebo)/world/test2.world" /> -->
 <!--  <arg name="world_name" default="worlds/empty.world" /> -->
 
   <!-- Short-term hack to support the original front_laser:=true argument for spawning
@@ -39,6 +40,4 @@
   <!-- Spawn Jackal -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
 	      args="-urdf -model jackal -param robot_description -x 0 -y 0 -z 0.0635 -Y 0 -P 0 -R 0" />
-	      
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find jackal_gazebo)/rviz/jackal.rviz" />
 </launch>

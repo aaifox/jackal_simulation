@@ -62,7 +62,7 @@
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
     <gazebo reference="asm_link">
-    <material>Gazebo/Yellow</material>
+    <material>Gazebo/OrangeTransparent</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
   <gazebo reference="holder_link">

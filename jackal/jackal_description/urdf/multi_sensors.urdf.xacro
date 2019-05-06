@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- ROBOSENSE 16
+  Laser beam: 16 beams
+  Wavelength: 905nm
+  Laser class: class1
+  Accuracy: +/-2cm(typical)
+  Range: 20cm to 150m(20% object reflectivity)
+  Data rate: 320000pts/s
+  Field of view (vertical): +15.0deg to -15.0deg (30deg)
+  Angular resolution(vertical): 2.0deg
+  Field of view (horizontal): 360deg
+  Angular resolution (horizontal/azimuth): 0.09deg to 0.36deg (5-20Hz)
+  RPM: 300rpm to 1200rpm(5Hz to 20Hz)
+  Data type: spatial coordinates/intensity
+  Dimension: H:82.7mm:109mm
+  Weight: 0.84Kg(without cabling)
+  -->
+
+ <!-- <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+  <VLP-16 parent="front_mount" name="velodyne" topic="/front/scan" hz="5" lasers="16" samples="300" collision_range="0.2" min_range="0.2" max_range="20" noise="0.0053" min_angle="-3.1415" max_angle="3.1415">
+    <origin xyz="${mount_spacing} 0 0.303" rpy="0 0.0 0" />
+  </VLP-16>  -->
+ 
+  <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+  <VLP-16 parent="front_mount" name="rslidar" topic="/rslidar_points" hz="5" lasers="16" samples="400" collision_range="0.2" min_range="0.2" max_range="150" noise="0.005">
+    <origin xyz="0 0 0.303" rpy="0 0 0" />
+  </VLP-16> 
+
+  <!-- REALSENSE D435
+  Depth Field of View (FOV)-(Horizontal x Vertical x Diagonal)	85.2deg x 58deg x 94deg (+/- 3deg)
+  Depth Stream Output Resolution	Up to 1280 x 720
+  Depth Stream Output Frame Rate	Up to 90 fps
+  Minimum Depth Distance (Min-Z)	0.2m
+  Sensor Shutter Type	Global shutter
+  Maximum Range	Approx.10 meters; Varies depending on calibration, scene, and lighting condition
+  RGB Sensor Resolution and Frame Rate	1920 x 1080 at 30 fps
+  RGB Sensor FOV (Horizontal x Vertical x Diagonal)	69.4deg x 42.5deg x 77deg (+/- 3deg)
+  Camera Dimension (Length x Depth x Height)	90 mm x 25 mm x 25 mm
+  -->
+
+<!--  <xacro:include filename="$(find realsense_gazebo_plugin)/urdf/realsense-RS200.macro.xacro"/>
+  <xacro:realsense-rs200 prefix="front_" parent="body_link">
+      <origin xyz="${body_x/2} 0 ${2*body_z/3}" rpy="0 0 0" />   
+  </xacro:realsense-rs200>
+  
+ <xacro:realsense-rs200 prefix="back_" parent="body_link">
+      <origin xyz="${-body_x/2} 0 ${2*body_z/3}" rpy="0 0 3.14" />   
+  </xacro:realsense-rs200> -->
+  
+<!--  <xacro:include filename="$(find realsense_gazebo_plugin)/urdf/realsense_d435.macro.xacro"/> 
+  <xacro:realsense_d435 parent="body_link" name="realsense_d435_1" rgb_hz="5" depth_hz="5" rgb_width="640" rgb_height="480" depth_width="640" depth_height="480" max_rgb_range="100.0">
+      <origin xyz="${body_x/2} 0 ${2*body_z/3}" rpy="0 0 0" />   
+  </xacro:realsense_d435> -->
+  
+  <xacro:include filename="$(find realsense_gazebo_plugin)/urdf/multi_realsense_d435.macro.xacro"/> 
+  <xacro:realsense_d435 prefix="FrontLeft" parent="front_mount" name="realsense_d435_1" rgb_hz="5" depth_hz="5" rgb_width="640" rgb_height="480" depth_width="640" depth_height="480" max_rgb_range="100.0">
+      <origin xyz="0.095 0.13 0.2" rpy="0 0 0" />   
+  </xacro:realsense_d435>
+  
+  <xacro:realsense_d435 prefix="FrontRight" parent="front_mount" name="realsense_d435_2" rgb_hz="5" depth_hz="5" rgb_width="640" rgb_height="480" depth_width="640" depth_height="480" max_rgb_range="100.0">
+      <origin xyz="0.095 -0.13 0.2" rpy="0 0 0" />   
+  </xacro:realsense_d435>
+  
+  <xacro:realsense_d435 prefix="Back" parent="rear_mount" name="realsense_d435_3" rgb_hz="5" depth_hz="5" rgb_width="640" rgb_height="480" depth_width="640" depth_height="480" max_rgb_range="100.0">
+      <origin xyz="-0.095 0 0.2" rpy="0 0 3.14" />   
+  </xacro:realsense_d435>
+</robot>
