@@ -23,10 +23,10 @@
     <origin xyz="${mount_spacing} 0 0.303" rpy="0 0.0 0" />
   </VLP-16>  -->
  
-  <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+<!--  <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
   <VLP-16 parent="front_mount" name="rslidar" topic="/rslidar_points" hz="5" lasers="16" samples="400" collision_range="0.2" min_range="0.2" max_range="150" noise="0.005">
     <origin xyz="0 0 0.303" rpy="0 0 0" />
-  </VLP-16> 
+  </VLP-16>  -->
 
   <!-- REALSENSE D435
   Depth Field of View (FOV)-(Horizontal x Vertical x Diagonal)	85.2deg x 58deg x 94deg (+/- 3deg)
@@ -54,7 +54,7 @@
       <origin xyz="${body_x/2} 0 ${2*body_z/3}" rpy="0 0 0" />   
   </xacro:realsense_d435> -->
   
-  <xacro:include filename="$(find realsense_gazebo_plugin)/urdf/multi_realsense_d435.macro.xacro"/> 
+<!--  <xacro:include filename="$(find realsense_gazebo_plugin)/urdf/multi_realsense_d435.macro.xacro"/> 
   <xacro:realsense_d435 prefix="FrontLeft" parent="front_mount" name="realsense_d435_1" rgb_hz="5" depth_hz="5" rgb_width="640" rgb_height="480" depth_width="640" depth_height="480" max_rgb_range="100.0">
       <origin xyz="0.095 0.13 0.2" rpy="0 0 0" />   
   </xacro:realsense_d435>
@@ -65,5 +65,6 @@
   
   <xacro:realsense_d435 prefix="Back" parent="rear_mount" name="realsense_d435_3" rgb_hz="5" depth_hz="5" rgb_width="640" rgb_height="480" depth_width="640" depth_height="480" max_rgb_range="100.0">
       <origin xyz="-0.095 0 0.2" rpy="0 0 3.14" />   
-  </xacro:realsense_d435>
+  </xacro:realsense_d435> -->
+  
 </robot>

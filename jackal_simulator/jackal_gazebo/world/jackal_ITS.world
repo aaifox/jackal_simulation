@@ -1,0 +1,900 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="ITS_world">
+    
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <model name="CUbE">
+      <static>true</static>
+      <pose>2.5 1.0 0.1 -0.055 0.0 0.0</pose>
+      <link name="CUbE">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://cube_conti/meshes/cube_low.dae</uri>
+          </mesh>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://cube_conti/meshes/cube_low.dae</uri>
+          </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/OrangeTransparent</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <link name="Ramp20">
+        <pose frame=''>0 1.22 0.24 -0.2212 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.9 1.1 .002</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.9 1.1 .002</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Orange</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+     
+    <model name="Booth_6x12">
+      <static>true</static>
+      <pose>3 6 0.0 0 0 0</pose>
+      
+      <link name="Floor">
+        <pose>0 0 0.05 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>6 12 0.1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>6 12 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/DarkGrey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name="wall_01">
+        <collision name="collision">
+          <geometry>
+            <polyline>
+              <point>2.83 -6</point>
+              <point>3.0 -6</point>
+              <point>2.95 -5</point>
+              <point>2.75 -4</point>
+              <point>2.625 -3.5</point>
+              <point>2.42 -3.5</point>
+              <point>2.58 -4</point>           
+              <point>2.75 -5</point>
+              <height>4.5</height>
+            </polyline>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <polyline>
+              <point>2.83 -6</point>
+              <point>3.0 -6</point>
+              <point>2.95 -5</point>
+              <point>2.75 -4</point>
+              <point>2.625 -3.5</point>
+              <point>2.42 -3.5</point>
+              <point>2.58 -4</point>           
+              <point>2.75 -5</point>
+              <height>4.5</height>
+            </polyline>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name="wall_02">
+       <pose>0 0 3.5 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <polyline>
+              <point>2.46 -3.5</point>
+              <point>2.625 -3.5</point>              
+              <point>2.3 -3</point>
+              <point>2 -2.417</point>
+              <point>1.667 -2</point>
+              <point>1 -1.42</point>
+              <point>0.375 -1</point>
+              <point>0.0 -0.8</point> 
+              <point>-1.0 -0.458</point>            
+              <point>-1.0 -0.625</point>
+              <point>0.0 -0.95</point>
+              <point>0.1 -1</point>
+              <point>1 -1.58</point>
+              <point>1.46 -2</point>
+              <point>2 -2.683</point>              
+              <point>2.17 -3</point>
+              <height>1</height>
+            </polyline>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <polyline>
+              <point>2.46 -3.5</point>
+              <point>2.625 -3.5</point>              
+              <point>2.3 -3</point>
+              <point>2 -2.417</point>
+              <point>1.667 -2</point>
+              <point>1 -1.42</point>
+              <point>0.375 -1</point>
+              <point>0.0 -0.8</point> 
+              <point>-1.0 -0.458</point>            
+              <point>-1.0 -0.625</point>
+              <point>0.0 -0.95</point>
+              <point>0.1 -1</point>
+              <point>1 -1.58</point>
+              <point>1.46 -2</point>
+              <point>2 -2.683</point>              
+              <point>2.17 -3</point>
+              <height>1</height>
+            </polyline>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name="wall_03">
+       <pose>0 0 3.5 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <polyline>            
+              <point>-1.0 -0.625</point>
+              <point>-1.0 -0.458</point>
+              <point>-1.92 0.0</point>
+              <point>-2.625 1</point>
+              <point>-2.83 2</point>
+              <point>-2.708 3</point>
+              <point>-2.08 4</point>
+              <point>-2.3 4</point>
+              <point>-2.83 3</point>
+              <point>-2.98 2</point>
+              <point>-2.79 1</point>              
+              <point>-2 -0.125</point>
+              <height>1</height>
+            </polyline>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <polyline>
+              <point>-1.0 -0.625</point>
+              <point>-1.0 -0.458</point>
+              <point>-1.92 0.0</point>
+              <point>-2.625 1</point>
+              <point>-2.83 2</point>
+              <point>-2.708 3</point>
+              <point>-2.08 4</point>
+              <point>-2.3 4</point>
+              <point>-2.83 3</point>
+              <point>-2.98 2</point>
+              <point>-2.79 1</point>              
+              <point>-2 -0.125</point>
+              <height>1</height>
+            </polyline>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name="wall_04">
+        <collision name="collision">
+          <geometry>
+            <polyline>
+              <point>-2.3 4</point> 
+              <point>-2.08 4</point>           
+              <point>-2.0 4.08</point>
+              <point>-1.0 4.58</point>
+              <point>-0.42 4.67</point>           
+              <point>-0.42 4.83</point>
+              <point>-1.0 4.75</point>
+              <point>-2.0 4.25</point>
+              <height>4.5</height>
+            </polyline>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <polyline>
+              <point>-2.3 4</point> 
+              <point>-2.08 4</point>           
+              <point>-2.0 4.08</point>
+              <point>-1.0 4.58</point>
+              <point>-0.42 4.67</point>           
+              <point>-0.42 4.83</point>
+              <point>-1.0 4.75</point>
+              <point>-2.0 4.25</point>
+              <height>4.5</height>
+            </polyline>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name='bar_01'>
+        <pose>-1 -0.542 1.75 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>3.5</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>3.5</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name='bar_02'>
+        <pose>1.42379 -1.531 0.5 0 -0 0 </pose>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>1</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>1</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name="board">
+        <pose>0 0 1 0 0 0</pose>
+        <visual name="visual">
+          <geometry>
+            <polyline>
+              <point>1.625 -1.664</point> 
+              <point>1.67 -1.6</point>           
+              <point>-1.0 -0.458</point>            
+              <point>-1.0 -0.558</point>
+              <height>1.5</height>
+            </polyline>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/OrangeTransparent</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name='tv_01'>
+        <pose>-1.52817 4.2953 2.2 0 0 0.48159</pose>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>1.16819 0.001 0.8</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name='tv_02'>
+        <pose>-1.46215 4.542 2.2 0 0 0.435488</pose>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>1.69719 0.001 1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name='Person_01'>
+        <pose>-1.83732 5.0731 0.1 0 0 -2.57972</pose>
+        <collision name='bottom'>
+          <pose frame=''>0 -0.1 0.01 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0.04 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://person_standing/meshes/standing.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0.04 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://person_standing/meshes/standing.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      
+      <link name='Person_02'>
+        <pose>-0.26 0.26 0.1 0 0 -0.004</pose>
+        <collision name='bottom'>
+          <pose frame=''>0 -0.1 0.01 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+        </collision>
+        <collision name='person'>
+          <pose frame=''>0 0 0.02 0.04 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://person_standing/meshes/standing.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.02 0.04 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://person_standing/meshes/standing.dae</uri>
+              <scale>1.1 1.1 1.1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      
+      <link name='Reception'>
+        <collision name="collision">
+          <geometry>
+            <polyline>
+              <point>-3.0 5</point>           
+              <point>-2.6 5</point>
+              <point>-2.45 5.42</point> 
+              <point>-2.0 5.62</point>
+              <point>-1.417 5.62</point>
+              <point>-1.417 6</point>
+              <point>-2 6</point>
+              <point>-2.67 5.71</point>
+              <height>1.4</height>
+            </polyline>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <polyline>
+              <point>-3.0 5</point>           
+              <point>-2.6 5</point>
+              <point>-2.45 5.42</point> 
+              <point>-2.0 5.62</point>
+              <point>-1.417 5.62</point>
+              <point>-1.417 6</point>
+              <point>-2 6</point>
+              <point>-2.67 5.71</point>
+              <height>1.4</height>
+            </polyline>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name='chair_01'>
+        <pose>-2.41 4.68 0.4 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.2</radius>
+              <length>0.8</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.2</radius>
+              <length>0.8</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name='chair_02'>
+        <pose>-1.28 5.35 0.3 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.2</radius>
+              <length>0.6</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.2</radius>
+              <length>0.6</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name='barrier_01'>
+        <pose>-2.79 -5.75 0.6 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name='barrier_02'>
+        <pose>-2.79 -4.375 0.6 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name='barrier_03'>
+        <pose>-2.79 -3.208 0.6 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name='barrier_04'>
+        <pose>-2.79 -1.875 0.6 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name='barrier_05'>
+        <pose>-2.75 -3.8125 1.1 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.001 3.875 0.1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.001 3.875 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Red</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      
+      <link name='table_01'>
+        <pose>1.75 0.28 0 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://cafe_table/meshes/cafe_table.dae</uri>
+              <scale>1.2 1.2 1</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cafe_table/meshes/cafe_table.dae</uri>
+              <scale>1.2 1.2 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      
+      <link name='table_02'>
+        <pose>0.002 1.72 0 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://cafe_table/meshes/cafe_table.dae</uri>
+              <scale>1.2 1.2 1</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cafe_table/meshes/cafe_table.dae</uri>
+              <scale>1.2 1.2 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      
+      <link name='table_03'>
+        <pose>-1.2 3.06 0 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://cafe_table/meshes/cafe_table.dae</uri>
+              <scale>0.7 0.7 1.2</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cafe_table/meshes/cafe_table.dae</uri>
+              <scale>0.7 0.7 1.2</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      
+      <link name='table_04'>
+        <pose>-2.04 1.53 0 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://cafe_table/meshes/cafe_table.dae</uri>
+              <scale>0.7 0.7 1.2</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cafe_table/meshes/cafe_table.dae</uri>
+              <scale>0.7 0.7 1.2</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      
+      <link name='table_05'>
+        <pose>-1.72 0.06 0 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://cafe_table/meshes/cafe_table.dae</uri>
+              <scale>0.7 0.7 1.2</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cafe_table/meshes/cafe_table.dae</uri>
+              <scale>0.7 0.7 1.2</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      
+    </model>
+    
+    <model name='car'>
+      <static>true</static>
+      <pose>4.32696 9.84889 0.05 -0.000712 -0.000333 1.99314</pose>
+      <link name='chassis'>
+        <pose frame=''>0 0 0.3 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3.4 1.2 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>3.4 1.2 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/FlatBlack</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <link name='front_left_wheel'>
+        <pose frame=''>1.5 0.7 0.3 -0 1.5707 1.5707</pose>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>0.1</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>0.1</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <link name='front_right_wheel'>
+        <pose frame=''>1.5 -0.7 0.3 -0 1.5707 1.5707</pose>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>0.1</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>0.1</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <link name='back_right_wheel'>
+        <pose frame=''>-1.5 -0.7 0.3 -0 1.5707 1.5707</pose>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>0.1</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>0.1</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <link name='back_left_wheel'>
+        <pose frame=''>-1.5 0.7 0.3 -0 1.5707 1.5707</pose>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>0.1</length>
+            </cylinder>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>0.1</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>-9.13743 10.9937 6.60957 0 0.443643 -0.399788</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>
