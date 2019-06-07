@@ -196,7 +196,7 @@
   </joint>
 
   <!-- Bring in sensors -->
-<!--  <xacro:include filename="$(find jackal_description)/urdf/sensors2.urdf.xacro" /> -->
+  <xacro:include filename="$(find jackal_description)/urdf/multi_sensors.urdf.xacro" />
 
   <!-- Bring in simulation data for Gazebo. -->
   <xacro:include filename="$(find jackal_description)/urdf/jackal.gazebo" />
