@@ -6,12 +6,10 @@ sudo apt install ros-kinetic-robot-localization ros-kinetic-controller-manager r
 ```
 for *ros-melodic*
 ```
-sudo apt install ros-melodic-robot-localization ros-melodic-controller-manager ros-melodic-joint-state-controller ros-melodic-diff-drive-controller ros-melodic-gazebo-ros ros-melodic-gazebo-ros-control ros-melodic-gazebo-plugins ros-melodic-roslint ros-melodic-amcl ros-melodic-map-server ros-melodic-move-base ros-melodic-urdf ros-melodic-xacro ros-melodic-message-runtime ros-melodic-topic-tools ros-melodic-teleop-twist-keyboard ros-melodic-twist-mux ros-melodic-ros-control ros-melodic-joint-state-controller-dbgsym ros-melodic-velodyne-simulator
+sudo apt install ros-melodic-robot-localization ros-melodic-controller-manager ros-melodic-joint-state-controller ros-melodic-diff-drive-controller ros-melodic-gazebo-ros ros-melodic-gazebo-ros-control ros-melodic-gazebo-plugins ros-melodic-roslint ros-melodic-amcl ros-melodic-map-server ros-melodic-move-base ros-melodic-urdf ros-melodic-xacro ros-melodic-message-runtime ros-melodic-topic-tools ros-melodic-teleop-twist-keyboard ros-melodic-twist-mux ros-melodic-ros-control ros-melodic-joint-state-controller-dbgsym ros-melodic-velodyne-simulator ros-melodic-lms1xx ros-melodic-gmapping
 ```
 ### currrently melodic do not support following packages:
 ```
-lms1xx
-gmapping
 pointgrey-camera-description
 ```
 
