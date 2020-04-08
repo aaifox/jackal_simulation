@@ -2,11 +2,12 @@
 
 This is *manual* way to install necessary packages :
 ```
-sudo apt install ros-kinetic-robot-localization ros-kinetic-controller-manager ros-kinetic-joint-state-controller ros-kinetic-diff-drive-controller ros-kinetic-gazebo-ros ros-kinetic-gazebo-ros-control ros-kinetic-gazebo-plugins ros-kinetic-lms1xx ros-kinetic-pointgrey-camera-description ros-kinetic-roslint ros-kinetic-amcl ros-kinetic-gmapping ros-kinetic-map-server ros-kinetic-move-base ros-kinetic-urdf ros-kinetic-xacro ros-kinetic-message-runtime ros-kinetic-topic-tools ros-kinetic-teleop-twist-keyboard ros-kinetic-velodyne-simulator ros-kinetic-twist-mux ros-kinetic-ros-control
+sudo apt install ros-kinetic-robot-localization ros-kinetic-controller-manager ros-kinetic-joint-state-controller ros-kinetic-diff-drive-controller ros-kinetic-gazebo-ros ros-kinetic-gazebo-ros-control ros-kinetic-gazebo-plugins ros-kinetic-lms1xx ros-kinetic-pointgrey-camera-description ros-kinetic-roslint ros-kinetic-amcl ros-kinetic-gmapping ros-kinetic-map-server ros-kinetic-move-base ros-kinetic-urdf ros-kinetic-xacro ros-kinetic-message-runtime ros-kinetic-topic-tools ros-kinetic-teleop-twist-keyboard ros-kinetic-velodyne-simulator ros-kinetic-twist-mux ros-kinetic-ros-control ros-kinetic-navigation ros-kinetic-teb-local-planner ros-kinetic-sbpl ros-kinetic-sbpl-lattice-planner
 ```
 for *ros-melodic*
 ```
-sudo apt install ros-melodic-robot-localization ros-melodic-controller-manager ros-melodic-joint-state-controller ros-melodic-diff-drive-controller ros-melodic-gazebo-ros ros-melodic-gazebo-ros-control ros-melodic-gazebo-plugins ros-melodic-roslint ros-melodic-amcl ros-melodic-map-server ros-melodic-move-base ros-melodic-urdf ros-melodic-xacro ros-melodic-message-runtime ros-melodic-topic-tools ros-melodic-teleop-twist-keyboard ros-melodic-twist-mux ros-melodic-ros-control ros-melodic-joint-state-controller-dbgsym ros-melodic-velodyne-simulator ros-melodic-lms1xx ros-melodic-gmapping
+sudo apt install ros-melodic-robot-localization ros-melodic-controller-manager ros-melodic-joint-state-controller ros-melodic-diff-drive-controller ros-melodic-gazebo-ros ros-melodic-gazebo-ros-control ros-melodic-gazebo-plugins ros-melodic-roslint ros-melodic-amcl ros-melodic-map-server ros-melodic-move-base ros-melodic-urdf ros-melodic-xacro ros-melodic-message-runtime ros-melodic-topic-tools ros-melodic-teleop-twist-keyboard ros-melodic-twist-mux ros-melodic-ros-control ros-melodic-joint-state-controller-dbgsym ros-melodic-velodyne-simulator ros-melodic-lms1xx ros-melodic-gmapping ros-melodic-navigation ros-melodic-teb-local-planner ros-melodic-sbpl ros-melodic-sbpl-lattice-planner
+
 ```
 ### currrently melodic do not support following packages:
 ```
